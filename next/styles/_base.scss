@@ -1,0 +1,134 @@
+html,
+body {
+  font-family: "Cabin", sans-serif;
+  @apply bg-white;
+  @apply text-base;
+  @apply box-border;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(243, 244, 246, var(--tw-bg-opacity)) transparent transparent;
+}
+
+.with-arrow::before {
+  top: -6px;
+  left: 70%;
+  position: absolute;
+  z-index: -1;
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-shadow: inherit;
+  box-shadow: 0 0 70px 5px rgba(1, 1, 1, 0.5);
+}
+
+.main-container {
+  @apply container;
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+  @screen sm {
+    width: 92%;
+  }
+  @screen md {
+    width: 90%;
+  }
+  @screen lg {
+    width: 88%;
+  }
+  @screen xl {
+    width: 86%;
+  }
+  @screen 2xl {
+    width: 84%;
+  }
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+// input {
+//   box-shadow: none !important;
+// }
+
+// input[type="number"].no-arrow {
+//   -moz-appearance: textfield;
+// }
+
+// input[type="number"].no-arrow::-webkit-outer-spin-button,
+// input[type="number"].no-arrow::-webkit-inner-spin-button,
+// input[type="time"].no-arrow::-webkit-outer-spin-button,
+// input[type="time"].no-arrow::-webkit-inner-spin-button {
+//   -webkit-appearance: none;
+// }
+
+// input[type="color"] {
+//   -webkit-appearance: none;
+//   border: none;
+//   width: 32px;
+//   height: 32px;
+//   padding: 4px;
+//   background: none;
+// }
+
+// input[type="color"]::-webkit-color-swatch-wrapper {
+//   padding: 0;
+// }
+
+// input[type="color"]::-webkit-color-swatch {
+//   border: none;
+//   border-radius: 3px;
+// }
+
+// ::-webkit-clear-button {
+//   display: none;
+//   -webkit-appearance: none;
+// }

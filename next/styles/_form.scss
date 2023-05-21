@@ -1,0 +1,472 @@
+.form-input {
+  @apply block w-full py-0 px-3 min-h-10 rounded border border-gray-400 hover:border-info focus:border-info-dark;
+  &[readonly],
+  &[disabled] {
+    @apply bg-gray-100 hover:border-gray-500 focus:border-gray-500;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    @apply bg-primary;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+// @import "mixins";
+// @import "~@ng-select/ng-select/themes/default.theme.css";
+
+// .field-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+
+//   label {
+//     @include font(14px, $grey-dark, $semibold);
+//     margin: 0 0 4px 2px;
+//     align-self: baseline;
+//   }
+
+//   &.required {
+//     label {
+//       &::after {
+//         content: ' *';
+//         color: $danger;
+//       }
+//     }
+//   }
+
+//   &.disabled {
+//     pointer-events: none;
+//     opacity: 0.6;
+//   }
+// }
+
+// .form-input {
+//   height: 36px;
+//   padding: 0 12px;
+//   color: $grey-darker;
+//   border: 1px solid $grey-mild;
+//   outline: 0;
+//   @include border-radius;
+
+//   @include placeholder {
+//     color: $grey-mild;
+//   }
+
+//   &:hover {
+//     border-color: $grey;
+//   }
+
+//   &:focus {
+//     border-color: $primary;
+//   }
+
+//   &[readonly] {
+//     background: $grey-lightest;
+//   }
+
+//   &:disabled {
+//     background: $grey-lightest;
+//     opacity: 1;
+//   }
+
+//   /* Change the white to any color ;) */
+//   &:-webkit-autofill,
+//   &:-webkit-autofill:hover,
+//   &:-webkit-autofill:focus,
+//   &:-webkit-autofill:active {
+//     /* autoprefixed ignore next */
+//     -webkit-box-shadow: 0 0 0px 1000px white inset;
+//   }
+// }
+
+// .form-wrapper {
+//   position: relative;
+
+//   .form-error {
+//     display: none;
+//   }
+
+//   &.error {
+//     .form-title {
+//       color: $danger;
+//     }
+
+//     .form-input {
+//       border-color: $danger;
+
+//       &:focus {
+//         border-color: $danger;
+//       }
+//     }
+
+//     .form-error {
+//       display: block;
+//     }
+//   }
+// }
+
+// .form-input-wrapper {
+//   margin-bottom: 8px;
+//   position: relative;
+
+//   .form-error {
+//     display: none;
+//   }
+
+//   &.error {
+//     .form-title {
+//       color: $danger !important;
+//     }
+
+//     .form-input {
+//       border-color: $danger;
+
+//       &:focus {
+//         border-color: $danger;
+//       }
+//     }
+
+//     .form-error {
+//       display: block;
+//     }
+//   }
+
+//   .prefix {
+//     position: absolute;
+//     top: 50%;
+//     left: 0;
+//     transform: translateY(-50%);
+//     width: 36px;
+//     height: 36px;
+//     color: $grey;
+//     font-size: 13px;
+//     @include flex-center;
+//   }
+
+//   .postfix {
+//     position: absolute;
+//     top: 50%;
+//     right: 0;
+//     transform: translateY(-50%);
+//     width: 36px;
+//     height: 36px;
+//     color: $grey;
+//     font-size: 13px;
+//     @include flex-center;
+//     cursor: pointer;
+
+//     &:hover {
+//       color: $grey-dark;
+//     }
+//   }
+
+//   .has-prefix {
+//     padding-left: 36px;
+//   }
+
+//   .has-postfix {
+//     padding-right: 36px;
+//   }
+
+//   &.stretch {
+//     height: calc(100% - 8px);
+//     display: flex;
+//     flex-direction: column;
+
+//     textarea {
+//       flex: 1 1 auto;
+//     }
+//   }
+
+//   &.disabled {
+//     pointer-events: none;
+
+//     .form-title {
+//       color: $grey-light;
+//     }
+
+//     .form-input {
+//       border-color: $grey-lighter;
+//       border-style: dashed;
+//       color: $grey-mild;
+//     }
+//   }
+
+//   &:focus-within {
+//     .form-title {
+//       color: $dark;
+//     }
+//   }
+
+//   .icon {
+//     position: absolute;
+//     right: 16px;
+//     top: 34px;
+//     color: $grey;
+
+//     &:hover {
+//       color: $grey-dark;
+//     }
+
+//     &.date {
+//       pointer-events: none;
+//     }
+//   }
+
+//   label.floating {
+//     position: absolute;
+//     top: -10px;
+//     left: 4px;
+//     font-size: 12px;
+//     font-weight: bold;
+//     background: white;
+//     padding: 0 2px;
+//     color: $grey-dark;
+//   }
+// }
+
+// .form-title {
+//   height: 20px;
+//   font-size: 13px;
+//   font-weight: 600;
+//   color: $grey-dark;
+//   margin-bottom: 4px;
+//   margin-left: 4px;
+//   display: block;
+
+//   .required {
+//     color: $danger;
+//   }
+// }
+
+// .form-input {
+//   width: 100%;
+//   height: 36px;
+//   border-radius: 3px;
+//   border: 1px solid $grey-mild;
+//   color: $grey-darker;
+//   padding: 4px 12px;
+//   outline: none;
+//   transition: border-color 0.2s ease-in-out;
+
+//   &:focus:not([readonly]) {
+//     border-color: $primary;
+//   }
+
+//   &[readonly]:not(.no-edit-manually),
+//   &[disabled] {
+//     background: $grey-lighter;
+//   }
+
+//   &::placeholder {
+//     color: $grey-mild;
+//     opacity: 1;
+//   }
+// }
+
+// textarea.form-input {
+//   box-sizing: content-box;
+//   width: calc(100% - 24px);
+// }
+
+// .form-select {
+//   padding: 0px 28px 0px 12px;
+//   @include select-arrow;
+// }
+
+// .form-text {
+//   margin-left: 4px;
+// }
+
+// .form-checkbox {
+//   font-size: 14px;
+//   color: $grey-dark;
+//   padding-left: 4px;
+//   height: 36px;
+//   white-space: pre;
+//   @include flex-align-center;
+//   cursor: pointer;
+
+//   // span {
+//   //   margin-bottom: 4px;
+//   // }
+
+//   i {
+//     margin-right: 8px;
+//     font-size: 18px;
+//   }
+
+//   .uncheck {
+//     color: $grey-dark;
+//   }
+
+//   .check {
+//     color: $accent;
+//   }
+
+//   &:not(.active) {
+//     .uncheck {
+//       display: inline;
+//     }
+
+//     .check {
+//       display: none;
+//     }
+//   }
+
+//   &.active {
+//     .uncheck {
+//       display: none;
+//     }
+
+//     .check {
+//       display: inline;
+//     }
+//   }
+
+//   &:hover {
+//     color: $grey-darker;
+
+//     .uncheck {
+//       color: $accent;
+//     }
+
+//     .check {
+//       color: $accent-dark;
+//     }
+//   }
+
+//   &.disabled {
+//     opacity: 0.5;
+//     pointer-events: none;
+//   }
+// }
+
+// .form-error {
+//   position: absolute;
+//   pointer-events: none;
+//   @include font(12px, $danger, $semibold);
+//   padding: 2px;
+//   bottom: -8px;
+//   right: 12px;
+//   background: white;
+//   text-align: right;
+//   animation: emerge 0.3s ease-in-out;
+// }
+
+// .form-header {
+//   margin: -16px -12px 12px;
+//   flex: 0 0 calc(100% + 24px);
+//   width: calc(100% + 24px);
+//   padding: 6px;
+//   border-radius: 3px;
+//   font-size: 13px;
+//   font-weight: 600;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 10px 20px;
+//   border-bottom: 1px solid $grey-lighter;
+// }
+
+// .form-wrapper {
+//   animation: slide-up 0.3s ease-in-out;
+//   background: white;
+//   border: 1px solid $grey-light;
+//   padding: 16px 12px;
+//   border-radius: 3px;
+//   border: 1px solid $grey-mild;
+
+//   hr {
+//     margin-top: 24px;
+//     margin-bottom: 16px;
+//   }
+// }
+
+// .form-autocomplete {
+//   display: flex;
+//   position: relative;
+
+//   .form-input {
+//     padding-left: 36px;
+//     padding-right: 36px;
+//   }
+
+//   .spinner, .search {
+//     position: absolute;
+//     font-size: 14px;
+//     left: 16px;
+//     top: 8px;
+//     margin: 0;
+//     width: 0;
+//     height: auto;
+//     @include flex-center;
+//     color: $grey;
+//   }
+
+//   .delete {
+//     @include flex-center;
+//     position: absolute;
+//     width: 36px;
+//     height: 100%;
+//     right: 0;
+//     top: 0;
+//     cursor: pointer;
+//     color: $grey;
+
+//     &:hover {
+//       color: $grey-dark;
+//     }
+//   }
+// }

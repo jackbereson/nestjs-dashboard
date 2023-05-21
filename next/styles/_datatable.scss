@@ -1,0 +1,526 @@
+// @import "mixins";
+
+// .ngx-datatable {
+//   box-shadow: 0 1px 2px rgba(100, 100, 100, 0.24) !important;
+//   border: 1px solid $grey-mild;
+//   border-radius: 4px;
+//   background: white;
+
+//   .visible {
+//     .datatable-checkbox input {
+//       margin: 0;
+//     }
+
+//     .datatable-header {
+//       height: 40px !important;
+
+//       .datatable-header-inner {
+//         height: 100%;
+
+//         .datatable-row-center {
+//           height: 100%;
+//         }
+//       }
+
+//       .datatable-header-cell {
+//         padding: 0 8px;
+//         line-height: 16px;
+//         height: 100%;
+//         color: $grey-darker;
+//         font-size: 14px;
+//         font-weight: 600;
+//         font-size: 14px;
+//         display: flex;
+//         align-items: center;
+//         border-bottom: 1px solid $grey-mild;
+
+//         .resize-handle {
+//           display: none;
+//         }
+
+//         .datatable-header-cell-template-wrap {
+//           display: flex;
+//           align-items: center;
+//         }
+
+//         &.sortable {
+//           font-weight: bold;
+//         }
+
+//         &:first-child {
+//           padding-left: 16px !important;
+//         }
+
+//         &:last-child {
+//           padding-right: 16px !important;
+//         }
+//       }
+//     }
+
+//     .datatable-body {
+//       min-height: calc(100vh - 150px);
+//       max-height: calc(100vh - 150px);
+//       @include v-scrollbar(7px);
+//       overflow-x: hidden;
+
+//       .empty-row {
+//         text-align: center;
+//         padding: 48px;
+//         color: $grey;
+//         font-weight: 400;
+//         font-size: 14px;
+//       }
+
+//       .datatable-row-wrapper {
+//         background-color: white !important;
+//       }
+
+//       .datatable-body-row {
+//         background-color: white !important;
+//         border-bottom: 1px solid $grey-lighter;
+
+//         .datatable-row-group {
+//           transition: none;
+//           background-color: white !important;
+//         }
+
+//         .datatable-body-cell {
+//           @include flex-align-center;
+//           white-space: pre-line;
+//           padding: 0 8px;
+//           line-height: 16px;
+//           color: $grey-darkest;
+//           font-weight: 500;
+//           font-size: 14px;
+
+//           &:first-child {
+//             padding-left: 12px !important;
+//           }
+
+//           &:last-child {
+//             padding-right: 12px !important;
+//           }
+
+//           .datatable-body-cell-label {
+//             width: 100%;
+//             margin-bottom: 3px;
+//             // height: 100%;
+//             // @include flex-align-center;
+//           } 
+
+//           &.cell-center {
+//             display: flex !important;
+//             justify-content: center !important;
+//             text-align: center !important;
+    
+//             .datatable-body-cell-label, div {
+//               display: flex !important;
+//               justify-content: center !important;
+//               text-align: center !important;
+//             }
+//           }
+    
+//           &.cell-right {
+//             display: flex !important;
+//             justify-content: flex-end !important;
+//             text-align: right !important;
+
+//             .datatable-body-cell-label, div {
+//               display: flex !important;
+//               justify-content: flex-end !important;
+//               text-align: right !important;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .datatable-footer {
+//       height: 40px;
+//       overflow-y: hidden;
+//       border-top: 1px solid $grey-mild;
+
+//       .page-count {
+//         height: 100%;
+//         font-size: 13px;
+//         color: $grey-darker;
+//         max-width: 200px;
+//         flex: 0 0 auto !important;
+//         padding: 0 8px;
+//         display: flex;
+//         align-items: center;
+//       }
+
+//       .pager {
+//         white-space: pre;
+//       }
+
+//       .divider {
+//         padding-right: 12px;
+//         border-left: 1px solid $grey-light;
+//         width: 1px;
+//         height: 45%;
+//       }
+
+//       .limit {
+//         font-size: 13px;
+//         color: $grey-darker;
+
+//         select {
+//           width: auto;
+//           height: 32px;
+//           padding: 0px 28px 0px 8px;
+//           margin-left: 8px;
+//           text-align: center;
+//           color: $grey-darker;
+//           border-color: $grey;
+//           border-radius: 2px;
+//           -webkit-appearance: none;
+//           -moz-appearance: none;
+//           background-color: white;
+//           @include select-arrow;
+//           background-position-y: 10px;
+
+//           &:hover {
+//             border-color: $primary;
+//           }
+//         }
+//       }
+
+//       .datatable-pager {
+//         flex-basis: 50%;
+
+//         a {
+//           margin: 6px 2px;
+//           width: 28px;
+//           height: 28px;
+//           display: inline-flex !important;
+//           justify-content: center;
+//           align-items: center;
+//           font-size: 14px;
+//         }
+//       }
+//     }
+//   }
+
+//   &.single-selection {
+//     // .datatable-body-row:hover,
+//     .datatable-body-row:hover .datatable-row-group {
+//       background-color: $grey-white !important;
+//     }
+
+//     .datatable-body-row.active .datatable-row-group {
+//       background-color: $light !important;
+
+//       .datatable-body-cell {
+//         color: $primary;
+//         font-weight: $semibold;
+//       }
+
+//       .extra-property {
+//         color: $primary;
+//       }
+//     }
+
+//     .datatable-header-cell {
+//       &:nth-child(2) {
+//         .datatable-header-cell-wrapper {
+//           display: flex !important;
+//         }
+//       }      
+
+//       &.cell-center {
+//         display: flex !important;
+//         justify-content: center !important;
+//         text-align: center !important;
+
+//         .datatable-header-cell-template-wrap, 
+//         .datatable-header-cell-label {
+//           display: flex !important;
+//           justify-content: center !important;
+//           text-align: center !important;
+//         }
+//       }
+
+//       &.cell-right {
+//         display: flex !important;
+//         justify-content: flex-end !important;
+//         text-align: right !important;
+
+//         .datatable-header-cell-template-wrap, 
+//         .datatable-header-cell-label {
+//           display: flex !important;
+//           justify-content: flex-end !important;
+//           text-align: right !important;
+//         }
+//       }
+//     }
+//   }
+
+//   &.multi-click-selection {
+//     // .datatable-body-row:hover,
+//     .datatable-body-row:hover .datatable-row-group {
+//       background-color: $grey-white !important;
+//     }
+
+//     .datatable-body-row.active .datatable-row-group {
+//       background-color: $light !important;
+
+//       .datatable-body-cell {
+//         color: $primary;
+//         font-weight: $semibold;
+//       }
+
+//       .extra-property {
+//         color: $primary;
+//       }
+//     }
+
+//     .datatable-header-cell {
+//       &:nth-child(2) {
+//         .datatable-header-cell-wrapper {
+//           display: flex !important;
+//         }
+//       }
+//     }
+//   }
+
+//   &.simple {
+//     border: 0;
+
+//     .visible {
+//       .datatable-header .datatable-header-cell {
+//         padding: 0 6px;
+//         font-size: 12px;
+//       }
+
+//       .datatable-body .datatable-body-cell {
+//         padding: 0 6px;
+//         line-height: 16px;
+//         font-size: 12px;
+//       }
+//     }
+
+//     .extra-property {
+//       font-size: 11px;
+//     }
+//   }
+
+//   &.no-footer {
+//     .datatable-footer {
+//       display: none;
+//     }
+
+//     .datatable-body {
+//       min-height: calc(100vh - 112px);
+//       max-height: calc(100vh - 112px);
+//     }
+//   }
+
+//   .image-container {
+//     width: 44px;
+//     flex: 0 0 44px;
+//     margin-right: 6px;
+//   }
+
+//   .image-wrapper {
+//     &:not(.circle) {
+//       img {
+//         border-radius: 6px;
+//       }
+//     }
+
+//     img {
+//       padding: 4px;
+
+//       &.inactive {
+//         filter: grayscale(100%);
+//       }
+//     }
+
+//     .stripes {
+//       position: absolute;
+//       width: 100%;
+//       height: 100%;
+//       background: repeating-linear-gradient(
+//         -45deg,
+//         rgba(0, 0, 0, 0.1),
+//         rgba(0, 0, 0, 0.1) 10px,
+//         rgba(0, 0, 0, 0.3) 10px,
+//         rgba(0, 0, 0, 0.3) 20px
+//       );
+//     }
+//   }
+
+//   .extra-property {
+//     color: $grey-darker;
+//     font-size: 13px;
+//   }
+
+//   .name {
+//     &.inactive {
+//       text-decoration: line-through;
+//     }
+//   }
+
+//   .btn-edit {
+//     white-space: pre;
+//     font-size: 12px;
+//     border-radius: 2px;
+//     background: $grey-light;
+//     color: $grey-dark;
+//     transition: none;
+
+//     &:hover,
+//     &:active {
+//       color: white;
+//       background: $primary;
+//     }
+
+//     span {
+//       margin-left: 4px;
+//     }
+//   }
+
+//   .btn-action {
+//     white-space: pre;
+//     padding: 0;
+//     width: 40px;
+
+//     i {
+//       font-size: 12px;
+//     }
+//   }
+
+//   .icon {
+//     color: $grey;
+//   }
+
+//   .true-icon {
+//     font-size: 14px;
+//     color: $success;
+//   }
+
+//   .negative-icon {
+//     font-size: 14px;
+//     color: $danger;
+//   }
+
+//   .false-icon {
+//     color: $grey-dark;
+//     font-size: 14px;
+//     // display: none;
+//   }
+
+//   .cell-text {
+//     @include text-ellipsis(3);
+//     white-space: pre-line;
+
+//     span {
+//       @include text-ellipsis(3);
+//     }
+//   }
+
+//   .datatable-checkbox {
+//     input {
+//       &:before {
+//         border: none;
+//         background: $grey-light;
+//         width: 18px;
+//         height: 18px;
+//         top: -1px;
+//         transition: all 0.1s ease-in-out;
+//       }
+
+//       &:after {
+//         opacity: 0;
+//         top: -1px;
+//         left: 5px;
+//         width: 8px;
+//         height: 14px;
+//         transition: all 0.1s ease-in-out;
+//       }
+
+//       &:checked {
+//         &:before {
+//           transform: none;
+//           height: 18px;
+//           background: $accent;
+//         }
+
+//         &:after {
+//           border: solid white;
+//           border-width: 0 3px 3px 0;
+//           transform: rotate(45deg);
+//           z-index: 20;
+//           background: transparent;
+//           border-radius: 2px;
+//           opacity: 1;
+//         }
+//       }
+//     }
+//   }
+
+//   &.short {
+//     .datatable-body {
+//       min-height: calc(506px) !important;
+//       max-height: calc(506px) !important;
+//     }
+//   }
+
+//   &.scroll-horz {
+//     .visible {
+//       .datatable-body {
+//         overflow-x: auto;
+
+//         &::-webkit-scrollbar {
+//           height: 10px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .dropdown-toggle {
+//   &::after {
+//     display: none;
+//   }
+// }
+
+// .dropdown-item {
+//   padding: 8px 20px;
+//   @include font(14px, $grey-darker);
+//   cursor: pointer;
+//   i {
+//     margin-right: 6px;
+//   }
+//   &:hover {
+//     background: $light;
+//     color: $primary;
+//   }
+//   &.active, &:active {
+//     background: $primary;
+//     color: white;
+//   }
+//   &.is-danger {
+//     &:hover {
+//       background: lighten($danger, 35%);
+//       color: $danger;
+//     }
+//   }
+//   &.disabled {
+//     opacity: 0.35;
+//   }
+// }
+
+// .dropdown-menu:not(.show) {
+//   display: none !important;
+//   visibility: hidden;
+// }
+
+// .color {
+//   display: inline-block;
+//   width: 24px;
+//   height: 24px;
+//   @include border-radius;
+// }

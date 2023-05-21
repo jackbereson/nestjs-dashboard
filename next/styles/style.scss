@@ -1,0 +1,25 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "react-datepicker/dist/react-datepicker.css";
+@import "antd/dist/antd.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "./base";
+}
+
+@layer components {
+  @import "./buttons";
+  @import "./form";
+  @import "./dialog";
+}
+
+@layer utilities {
+  @import "./utilities";
+}
+
+@import "./custom";
+@import "./content";
+@import "./app-loader";

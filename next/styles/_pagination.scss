@@ -1,0 +1,89 @@
+// @import "./mixins";
+
+// .ngb-pagination {
+//   text-align: right;
+
+//   .pagination {
+//     display: flex;
+//     justify-content: flex-end;
+
+//     .page-item {
+//       .page-link {
+//         font-size: 14px;
+//         border-radius: 3px !important;
+//         display: flex !important;
+//         justify-content: center !important;
+//         align-items: center !important;
+
+//         >* {
+//           align-self: center !important;
+//         }
+
+//         border-width: 1px !important;
+//         border-color: $grey-mild !important;
+//         color: $grey-dark !important;
+//         background: none !important;
+//         box-shadow: none !important;
+//         border-radius: 0 !important;
+//       }
+
+//       &.active {
+//         .page-link {
+//           border-color: $primary !important;
+//           background-color: $primary !important;
+//           color: white !important;
+//         }
+//       }
+
+//       &.disabled {
+//         .page-link {
+//           color: $grey-mild !important;
+//           background-color: $grey-lightest !important;
+//         }
+//       }
+
+//       &:hover:not(.active):not(.disabled) {
+//         .page-link {
+//           border-color: $primary !important;
+//           color: $primary !important;
+//         }
+//       }
+
+//       &:first-child {
+//         .page-link {
+//           border-top-left-radius: $border-radius !important;
+//           border-bottom-left-radius: $border-radius !important;
+
+//           &::before {
+//             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free" !important;
+//             content: "\f053" !important;
+//             font-weight: 900;
+//             transform: translateY(2px);
+//           }
+
+//           span {
+//             display: none;
+//           }
+//         }
+//       }
+
+//       &:last-child {
+//         .page-link {
+//           border-top-right-radius: $border-radius !important;
+//           border-bottom-right-radius: $border-radius !important;
+
+//           &::before {
+//             font-family: "Font Awesome 5 Pro", "Font Awesome 5 Free" !important;
+//             content: "\f054" !important;
+//             font-weight: 900;
+//             transform: translateY(2px);
+//           }
+
+//           span {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

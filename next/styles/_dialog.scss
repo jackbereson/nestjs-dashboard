@@ -1,0 +1,157 @@
+.scroll-block {
+  overflow-y: scroll;
+  position: fixed;
+  width: 100%;
+}
+
+.dialog-wrapper {
+  &.mobile {
+    .dialog {
+      width: 100vw !important;
+      max-width: initial !important;
+      border-radius: 0 !important;
+      position: absolute;
+      bottom: 0;
+      max-height: 94vh;
+      overflow-y: auto;
+      padding-bottom: 40px;
+    }
+    .dialog-header {
+      position: sticky;
+      top: 0;
+    }
+    .dialog-footer {
+      position: sticky;
+      bottom: 0;
+    }
+  }
+}
+
+// @import "./mixins";
+
+// .dialog-wrapper {
+//   margin: -24px;
+// }
+
+// .cdk-global-overlay-wrapper.overflow {
+//   overflow-y: scroll;
+//   padding-bottom: 32px;
+//   pointer-events: all;
+
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+
+//   .cdk-overlay-pane {
+//     transform: translateY(32px);
+//   }
+
+//   .mat-dialog-container {
+//     margin-bottom: 32px;
+//     overflow: visible;
+//   }
+// }
+
+// .dialog-header {
+//   @include flex-align-center;
+//   justify-content: space-between;
+//   padding: 10px 20px;
+//   border-bottom: 1px solid $grey-lightest;
+
+//   .title {
+//     color: $grey-dark;
+//     font-weight: 600;
+//     font-size: 13px;
+//   }
+
+//   i {
+//     cursor: pointer;
+//     color: $grey-mild;
+
+//     &:hover {
+//       color: $grey;
+//     }
+//   }
+// }
+
+// .dialog-content {
+//   // min-height: 33vh;
+//   align-content: flex-start;
+// }
+
+// .dialog-footer {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 8px 12px;
+//   border-top: 1px solid $grey-lightest;
+
+//   .desc {
+//     color: $grey-dark;
+//     font-weight: 400;
+//     font-size: 13px;
+//     padding-right: 24px;
+//   }
+// }
+
+// .dialog-cancel {
+//   font-size: 13px;
+//   padding: 10px 36px;
+// }
+
+// .dialog-confirm {
+//   text-transform: uppercase;
+//   font-size: 13px;
+//   padding: 10px 36px;
+//   min-width: 120px;
+//   color: white;
+
+//   &.round {
+//     border-radius: 50px;
+//   }
+// }
+
+// .dialog-success-text {
+//   @include flex-align-center;
+//   height: 40px;
+//   font-weight: 600;
+//   font-size: 13px;
+//   color: $success;
+//   animation: slide-up 0.3s ease-in-out;
+
+//   i {
+//     margin-right: 8px;
+//   }
+// }
+
+// .dialog-open {
+//   background: none;
+//   border-bottom-width: 3px;
+// }
+
+// .dialog-ok {
+//   text-transform: uppercase;
+//   font-size: 13px;
+//   padding: 10px 28px;
+//   border-radius: 50px;
+//   min-width: 120px;
+// }
+
+// @media screen and (max-width: 556px) {
+//   ::ng-deep.cdk-overlay-pane {
+//     max-width: 100vw !important;
+//     position: absolute !important;
+//     bottom: 0 !important;
+//     transform: none !important;
+
+//     ::ng-deep.mat-dialog-container {
+//       border-radius: 0 !important;
+//       margin-bottom: 0 !important;
+//       padding-bottom: 32px !important;
+
+//       .dialog-content {
+//         max-height: calc(84vh - 40px);
+//         overflow-y: auto;
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,33 @@
+// @mixin v-scrollbar($width: 6px) {
+//   overflow-y: auto;
+
+//   &::-webkit-scrollbar {
+//     width: $width;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     background-color: transparent;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background: mix($grey-mild, $grey-light);
+//     border-radius: 1px;
+//   }
+// }
+
+// @mixin h-scrollbar($height: 5px) {
+//   overflow-x: auto;
+
+//   &::-webkit-scrollbar {
+//     height: $height;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     background-color: transparent;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background: $grey-mild;
+//     border-radius: 2px;
+//   }
+// }
