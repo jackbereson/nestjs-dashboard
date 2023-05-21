@@ -27,7 +27,9 @@
     "analyze": "cross-env ANALYZE=true next build ./next",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build ./next",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build ./next",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
@@ -145,7 +147,7 @@
     "concurrently": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-next": "^11.0.1",
-    "husky": "^7.0.1",
+    "husky": "^8.0.0",
     "nodemon": "^2.0.12",
     "postcss": "^8.3.6",
     "postcss-preset-env": "^7.4.3",
